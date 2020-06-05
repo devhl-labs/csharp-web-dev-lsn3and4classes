@@ -7,9 +7,23 @@ namespace SchoolPractice
 {
     public class Student
     {
-        private string Name;
-        private int StudentId;
-        private int NumberOfCredits;
-        private double Gpa;
+        public string Name { get; }
+
+        public int StudentId { get; }
+
+        public int NumberOfCredits { get; }
+
+        public double Gpa { get; }
+
+        public Student(string name, int studentId, int numberOfCredits, double gpa)
+        {
+            Name = name;
+
+            StudentId = studentId;
+
+            NumberOfCredits = numberOfCredits;
+
+            Gpa = gpa;
+        }
     }
 }
