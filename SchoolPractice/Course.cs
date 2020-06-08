@@ -22,5 +22,19 @@ namespace SchoolPractice
 
             Credits = credits;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Course course &&
+                   CourseId == course.CourseId &&
+                   Name == course.Name &&
+                   Credits == course.Credits &&
+                   EqualityComparer<Dictionary<int, Student>>.Default.Equals(Students, course.Students);
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(CourseId);
+        }
     }
 }
